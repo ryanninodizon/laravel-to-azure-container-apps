@@ -7,6 +7,7 @@ WORKDIR /var/www/html
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
+# Install zips for extractions
 RUN apt-get update -y && apt-get install -y unzip zip 
 
 # Install Composer
@@ -32,6 +33,5 @@ EXPOSE 80
 
 # Start Apache server
 CMD ["apache2-foreground"]
-
 #docker build -t my-laravel-app .
 #docker run -p 8000:80 my-laravel-app
